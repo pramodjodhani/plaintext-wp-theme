@@ -1,24 +1,18 @@
 /*
 Theme Name: PlainText
-Theme URI: http://wpnik.com/
+Theme URI: https://pramodjodhani.com/
 Author: Pramod Jodhani
-Author URI: https://profiles.wordpress.org/promz
-Description: A Clear and Simple Theme for Blogs!
-Version: 1.0.2
+Author URI: https://pramodjodhani.com/
+Description: A plain and minimal theme for Blogs!
+Version: 1.1.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: plaintext
 Tags: custom-colors, custom-menu, custom-logo, blog, featured-images, post-formats, rtl-language-support, threaded-comments, translation-ready
 */
-body
-{
+body {
 	font-size: 20px;
 }
-
-/*.wp-caption
-{
-
-}*/
 
 .alignleft {
 	display: inline;
@@ -39,43 +33,25 @@ body
 	margin-right: auto;
 }
 
-
-/*.bypostauthor 
-{
-
-}
-
-.gallery-caption 
-{
-
-}
-.wp-caption-text 
-{
-
-}
-*/
-img
-{
+img {
 	max-width: 100%;
 }
 
-p
-{
+p {
 	margin-bottom: 30px;
 }
-a:hover
-{
+
+a:hover {
 	color: #111;
 }
 
-h1,h2,h3,h4,h5,h6
-{
+h1,h2,h3,h4,h5,h6 {
 	font-weight: 600;
 	color: #000;
 	margin-bottom: 30px;
 }
-blockquote
-{
+
+blockquote {
 	font-size: 20px;
 	color: #828282;
     border-left: 5px solid #e8e8e8;
@@ -83,8 +59,7 @@ blockquote
     font-style: italic;
 }
 
-ul,li
-{
+ul,li {
 	list-style: none;
 }
 
@@ -505,25 +480,6 @@ option
 	margin-top:10px;
 }
 
-/*.pagexofy
-{
-	float: right;
-	margin-top: 40px !important;
-}
-
-.page-numbers
-{
-	float: left;
-	padding:0 !important;
-	padding-top: 20px !important;
-}
-
-.page-numbers>li
-{
-	float: left;
-	margin-right: 10px;
-}*/
-
 /*
   ***  DROPDOWN MENU CSS ***
 */
@@ -553,6 +509,7 @@ option
 	padding: 0;
 	margin: 0;
 }
+
 #cssmenu > ul > li {
 	list-style: inside none;
 	padding: 0;
@@ -561,6 +518,7 @@ option
 	display: block;
 	position: relative;
 }
+
 #cssmenu > ul > li > a {
 	outline: none;
 	display: block;
@@ -570,22 +528,19 @@ option
 	text-decoration: none;
 
 }
-#cssmenu > ul > li > a:hover {
 
+#cssmenu > ul > li > a:hover {
 	color:#000;
 }
-#cssmenu > ul > li:first-child > a {
 
-}
 #cssmenu > ul > li > a:after {
 	content: '';
 	position: absolute;
-
 	top: -1px;
 	bottom: -1px;
 	right: -2px;
 	z-index: 99;
- 
+
 }
 
 #cssmenu ul li.has-sub:hover > a:after {
@@ -612,11 +567,10 @@ option
 	display: none;
 	width: auto;
 	position: absolute;
-	top: 38px;
-	/* padding: 10px 0; */
+	top: 45px;
 	color:#000;
 	z-index: 999;
-
+	padding: 10px 0;
 }
 #cssmenu ul li > ul {
 	width: 200px;
@@ -630,11 +584,12 @@ option
 	position: relative;
 }
 
-#cssmenu ul li > ul li>ul
-{
-	left:200px;
-	top:-5px;
+#cssmenu ul li > ul li>ul {
+    left: 200px;
+    top: -11px;
+    border: 1px solid #00000026;
 }
+
 #cssmenu ul li > ul li a {
 	outline: none;
 	display: block;
@@ -643,19 +598,52 @@ option
 	padding: 10px 20px;
 	color: #000;
 	text-decoration: none;
-	border-bottom:1px solid #000;
+	/* border-bottom: 1px solid #00000026; */
 	background:white;
 }
 
 ul#header_1 > li > ul {
-    border: 1px solid #000;
+    border: 1px solid #00000026;
     background: #fff;
+}
+
+ul#header_1 > li > ul:before {
+    content: "";
+    color: #eee;
+    position: absolute;
+    height: 0;
+    width: 0;
+    border-right: 10px solid #0000;
+    border-left: 10px solid #0000;
+    border-bottom: 10px solid #000;
+    border-top: 10px solid #0000;
+    z-index: 100000;
+    top: -20px;
+    left: 31px;
 }
 
 ul#header_1 > li > ul >li:last-child a {
     border-bottom: none;
 }
 
+div#cssmenu li a:hover {
+    color: #0000009c;
+}
+
+#cssmenu ul li > ul li>ul:before {
+    content: "";
+    color: #eee;
+    position: absolute;
+    height: 0;
+    width: 0;
+    border-right: 10px solid #0000;
+    border-left: 10px solid #000;
+    border-bottom: 10px solid #0000;
+    border-top: 10px solid #0000;
+    z-index: 100000;
+    top: 20px;
+    left: 0;
+}
 /* 
  *** END DROPDOWN MENU CSS ***
 */
@@ -671,3 +659,17 @@ ul#header_1 > li > ul >li:last-child a {
 .site_header {
 	background-size: cover;
 }
+
+/* Comments start */
+.comment-form-comment textarea#comment {
+    display: block;
+}
+
+div#respond .form-submit {
+    text-align: left;
+}
+
+div#comments {
+    margin-top: 60px;
+}
+/* Comments end */

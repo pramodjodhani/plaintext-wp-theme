@@ -24,7 +24,11 @@
 					<?php else : ?>
 					<div class="post"><h2><?php _e('Not Found' , 'plaintext'); ?></h2></div>
 					<?php endif; ?>		
-					<?php comments_template(); ?>
+					<?php
+					if ( comments_open() || get_comments_number() ) {
+						comments_template();
+					} 
+					?>
 				</div>
 			</div>
 
