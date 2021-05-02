@@ -16,14 +16,17 @@
 			</div>
 			<div class="links" id="main_links">
 				<?php
-					$arg_2 = array(
-						'theme_location' => 'header_right',
-						'menu_class'     => 'header_menu',
-						'menu_id'        => 'header_1',
-						'container_id'   => 'cssmenu',
-						'walker'         => new wpwiz_Menu_Walker(),
+				if ( has_nav_menu( 'header_right' ) ) :
+					wp_nav_menu(
+						array(
+							'theme_location' => 'header_right',
+							'menu_class'     => 'header_menu',
+							'menu_id'        => 'header_1',
+							'container_id'   => 'cssmenu',
+							'walker'         => new wpwiz_Menu_Walker(),
+						)
 					);
-					wp_nav_menu( $arg_2 );
+				endif;
 				?>
 			</div>
 		</div>			

@@ -50,6 +50,9 @@ function wpwiz_setup() {
 	if ( ! isset( $content_width ) ) {
 		$content_width = 780;
 	}
+
+	$ret = load_theme_textdomain( 'plaintext' );
+	// var_dump($ret);exit;
 }
 
 add_action( 'after_setup_theme', 'wpwiz_setup' );
