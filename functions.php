@@ -1,7 +1,7 @@
 <?php
 
 define( 'WPWIZ_PLAINTEXT_THEME_URL', get_template_directory_uri() );
-define( 'WPWIZ_THEME_VERSION', '1.1.0' );
+define( 'WPWIZ_PLAINTEXT_THEME_VERSION', '1.1.0' );
 
 /**
  * Theme setup.
@@ -163,11 +163,11 @@ class wpwiz_Menu_Walker extends Walker {
  * Enqueue frontend scripts.
  */
 function wpwiz_frontend_scripts() {
-	wp_enqueue_style( 'wpwiz', get_template_directory_uri() . '/style.css', array(), WPWIZ_THEME_VERSION );
-	wp_enqueue_style( 'meanmenu', get_template_directory_uri() . '/css/meanmenu.css', array(), WPWIZ_THEME_VERSION );
-	wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/css/bootstrap.min.css', array(), WPWIZ_THEME_VERSION );
-	wp_enqueue_script( 'meanmenu-js', get_template_directory_uri() . '/js/jquery.meanmenu.js', array( 'jquery' ), WPWIZ_THEME_VERSION, true );
-	wp_enqueue_script( 'plaintextjs', get_template_directory_uri() . '/js/script.js', array( 'jquery' ), WPWIZ_THEME_VERSION, true );
+	wp_enqueue_style( 'wpwiz', get_template_directory_uri() . '/style.css', array(), WPWIZ_PLAINTEXT_THEME_URL );
+	wp_enqueue_style( 'meanmenu', get_template_directory_uri() . '/css/meanmenu.css', array(), WPWIZ_PLAINTEXT_THEME_URL );
+	wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/css/bootstrap.min.css', array(), WPWIZ_PLAINTEXT_THEME_URL );
+	wp_enqueue_script( 'meanmenu-js', get_template_directory_uri() . '/js/jquery.meanmenu.js', array( 'jquery' ), WPWIZ_PLAINTEXT_THEME_URL, true );
+	wp_enqueue_script( 'plaintextjs', get_template_directory_uri() . '/js/script.js', array( 'jquery' ), WPWIZ_PLAINTEXT_THEME_URL, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -176,40 +176,14 @@ function wpwiz_frontend_scripts() {
 add_action( 'wp_enqueue_scripts', 'wpwiz_frontend_scripts' );
 
 /**
- * Enqueue Admin scripts.
- */
-function wpwiz_admin_scripts() {
-
-	$in_footer = true;
-	$htm_path  = WPWIZ_PLAINTEXT_THEME_URL . '/js/htm.js';
-	wp_register_script(
-		'htm',
-		$htm_path,
-		array(),
-		'1',
-		$in_footer
-	);
-
-	wp_enqueue_script(
-		'wpwiz-recentpost-block',
-		WPWIZ_PLAINTEXT_THEME_URL . '/blocks/recent-post-slider.js',
-		array( 'wp-blocks', 'wp-hooks', 'wp-element', 'wp-i18n', 'htm' ),
-		'1',
-		$in_footer
-	);
-
-}
-add_action( 'admin_enqueue_scripts', 'wpwiz_admin_scripts' );
-
-/**
  * Sidebars.
  */
 function wpwiz_registering_sidebar() {
 	register_sidebar(
 		array(
 			'id'            => 'primary_sidebar',
-			'name'          => __( 'Primary Sidebar', 'wpwiz' ),
-			'description'   => __( 'This is the Primary Sidebar', 'wpwiz' ),
+			'name'          => __( 'Primary Sidebar', 'plaintext' ),
+			'description'   => __( 'This is the Primary Sidebar', 'plaintext' ),
 			'before_widget' => '<div id="%1$s" class="widget %2$s">',
 			'before_title'  => '<h3 class="wpwiz_primary_sidebar">',
 			'after_title'   => '</h3>',

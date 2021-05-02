@@ -1,3 +1,3 @@
-jQuery(document).ready(function () {
+jQuery(function () {
 	jQuery('header .wrapper .links #cssmenu').meanmenu({meanScreenWidth:580});
 });
