@@ -4,6 +4,8 @@ Theme URI: https://wordpress.org/themes/plaintext/
 Author: Pramod Jodhani
 Author URI: https://pramodjodhani.com/
 Description: A plain and minimal theme for Blogs!
+Tested up to: 5.7.1
+Requires PHP: 5.6
 Version: 1.1.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -361,14 +363,8 @@ option
 	font-weight: 500;
 }
 
-.comment-author
-{
+.comment-author {
 	margin-bottom:10px;
-}
-
-.reply
-{
-	margin-bottom:30px;
 }
 
 .reply>a
@@ -670,6 +666,63 @@ div#respond .form-submit {
 }
 
 div#comments {
-    margin-top: 60px;
+	margin-top: 60px;
+	clear: both;
+}
+
+.comment-list .comment {
+    padding: 6px 11px;
+    margin-bottom: 30px;
+}
+
+.bypostauthor {
+    background: #F2F2F2;
+}
+
+.comment-list .comment {
+    padding: 6px 11px;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.bypostauthor:after {
+	content: "Author";
+	position: absolute;
+	top: 0;
+	right: 0;
+	background: #000;
+	color: #fff;
+	padding: 2px 8px;
 }
 /* Comments end */
+
+blockquote.alignleft,
+.wp-caption.alignleft,
+img.alignleft {
+	margin: 0.4em 1.6em 1.6em 0;
+}
+
+blockquote.alignright,
+.wp-caption.alignright,
+img.alignright {
+	margin: 0.4em 0 1.6em 1.6em;
+}
+
+blockquote.aligncenter,
+.wp-caption.aligncenter,
+img.aligncenter {
+	clear: both;
+	margin-top: 0.4em;
+	margin-bottom: 1.6em;
+}
+
+.wp-caption.alignleft,
+.wp-caption.alignright,
+.wp-caption.aligncenter {
+	margin-bottom: 1.2em;
+}
+
+.wp-caption .wp-caption-text {
+    font-size: 13px;
+    font-style: italic;
+}

@@ -6,25 +6,25 @@
 	<link rel="pingback" href=" <?php bloginfo( 'pingback_url' ); ?>" >
 	<?php wp_head(); ?>
 </head>
-<body <?php body_class();?>>
+<body <?php body_class(); ?>>
+	<?php wp_body_open(); ?>
 	<header class="site_header" id="main_header">
 		<div class="wrapper clearfix">
 			<div class="logo">						
 				<?php the_custom_logo(); ?>											  
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) );?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
 			</div>
-				<div class="links" id="main_links">
-				<?php 
-				$arg_2 = array( 
-					 		'theme_location' => 'header_right' ,
-					 		'menu_class' => 'header_menu' ,
-					 		'menu_id' => 'header_1' ,
-					 		'container_id' => 'cssmenu' ,
-					 		'walker' => new wpwiz_MENU_Walker()
-						 	);
-				wp_nav_menu($arg_2); 
+			<div class="links" id="main_links">
+				<?php
+					$arg_2 = array(
+						'theme_location' => 'header_right',
+						'menu_class'     => 'header_menu',
+						'menu_id'        => 'header_1',
+						'container_id'   => 'cssmenu',
+						'walker'         => new wpwiz_Menu_Walker(),
+					);
+					wp_nav_menu( $arg_2 );
 				?>
 			</div>
 		</div>			
 	</header>				
-	
