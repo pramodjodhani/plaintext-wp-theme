@@ -723,6 +723,7 @@ img.aligncenter {
 	margin-bottom: 1.2em;
 }
 
+.gallery-caption,
 .wp-caption .wp-caption-text {
     font-size: 13px;
     font-style: italic;
