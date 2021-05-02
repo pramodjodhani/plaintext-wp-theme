@@ -45,4 +45,11 @@ License: GPL
 
 == Changelog ==
 
-1.0 Initial release
+1.1 - May 2, 2021
+- PHPCS Improvements  
+- Menu redesigned  
+- `wp-caption`, `bypostauthor` classes added  
+- WP 5.7 compatibility  
+
+1.0 - Apr 14, 2018
+- Initial release
